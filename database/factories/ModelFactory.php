@@ -11,11 +11,31 @@
 |
 */
 
+#User
 $factory->define(CodeCommerce\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});
+
+#Category
+$factory->define(CodeCommerce\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'description' => $faker->sentence
+    ];
+});
+
+#Product
+$factory->define(CodeCommerce\Product::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+		'description' => $faker->sentence,
+		'price' => $faker->randomFloat(2),
+		'featured' => $faker->boolean,
+		'recommend' => $faker->boolean
     ];
 });
