@@ -8,6 +8,6 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
     	DB::table('products')->truncate();
-    	factory('CodeCommerce\Product',15)->create();
+    	factory('CodeCommerce\Product',25)->create();
     }
 }

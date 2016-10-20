@@ -4,6 +4,8 @@
 <div class="Container">
     <h1>Categorias</h1>
 
+    <p><a href="{{ route('categories.create') }}"><button class="btn">Nova Categoria</button></a></p>
+
     <table class="table">
     	<tr>
     		<th>ID</th>
@@ -22,9 +24,9 @@
                 </td>
 	    	</tr>
         @endforeach
-    	
-
     </table>
+
+    {!! $categories->render() !!}
 </div>
 @endsection
 		
